@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+    <meta charset="utf-8">
+    <title>Mecanotronix</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style type="text/css">
+        body {padding: 1em}
+        .progress-bar {position: absolute; width:100%; height:5px; background:lightgrey;left:0;top:0;}
+        .progress-bar .progress { background: black; height:100%; position: absolute; left:0px;}
+        .progress-bar, .progress {transition:.2s}
+        .tablon {text-align: center;position: relative}
+        .mensaje {height: 2em}
+        .acciones{height: 6em; position: relative;}
+        .counters {position: absolute; right:0px; width: 5em}
+        .count {float: right; display:none; padding: 2px 0px; margin: 0 1px; min-width: 2em;}
+        .count-timer {float: right; margin-top:2px; min-width: 4.1em;}
+        .registro {text-align: center;}
+        label {display: inline-block; margin: .5em; }
+        .input-group-prepend {float:left;}
+        .input-group-text {min-width:2.5em}
+        i.btn,b.btn {text-align:center; padding: 2px 10px 4px; width: 1.8em;height: 1.8em; font-style:normal; font-size:24px}
+        b.btn { position: absolute; left: 50%;
+        opacity: 1; transform: translate3d(1em,0,0); animation: bubble 401ms ease-out forwards;}
+        b.btn::before {display: block; content:" "; position: absolute; width:0px; height:0px;
+        border:5px solid transparent;border-right-color: inherit;  left:-10px; top:35%; }
+        @keyframes bubble {
+            50%  {opacity: 1; }
+            100% {opacity: 0; transform: translate3d(2.5em,0,0);}
+        }
+        .ghost {opacity: 0;}
+    </style>
+</head><body>
+<article id="mecanotronix" class="game">
+    <div class="progress-bar"><div class="progress"></div></div>
+    <section class="tablon">
+        <div class="counters">
+            <span class="count count-correct btn btn-success">0</span>
+            <span class="count count-wrong btn btn-danger">0</span>
+            <span class="count count-timer btn btn-primary">0</span>
+        </div>
+        <h1>Mecanotronix</h1>
+        <div class="mensaje">Espera...</div>
+        <div class="acciones"></div>
+    </section>
+        <div class="registro form-inline"></div>
+        <input type="text" class="ghost">
+
+</article>
+<script type="text/javascript" src="script.min.js"></script>
+</body></html>
